@@ -14,3 +14,25 @@ document.getElementById('calculate-player-expenses').addEventListener("click", f
 
 });
 
+// calculate total expenses 
+document.getElementById('calculate-total-expense').addEventListener("click", function () {
+
+    const previousPlayerExpensesElement = document.getElementById('player-expense');
+    const previousPlayerExpensesString = previousPlayerExpensesElement.innerText;
+    const PlayerExpenses = parseFloat(previousPlayerExpensesString);
+
+    const managerExpenseElement = document.getElementById('manager-expanse');
+    const managerExpenseString = managerExpenseElement.value;
+    const managerExpense = parseFloat(managerExpenseString);
+
+    const coachExpenseElement = document.getElementById('coach-expense');
+    const coachExpenseString = coachExpenseElement.value;
+    const coachExpense = parseFloat(coachExpenseString);
+
+    const newTotalExpenses = PlayerExpenses + managerExpense + coachExpense;
+
+    const previousTotalExpensesElement = document.getElementById('total-expense');
+
+    previousTotalExpensesElement.innerText = newTotalExpenses;
+
+});
