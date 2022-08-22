@@ -6,7 +6,8 @@ document.getElementById('calculate-player-expenses').addEventListener("click", f
     const perPlayerExpenseString = perPlayerExpenseElement.value;
     const perPlayerExpense = parseFloat(perPlayerExpenseString);
 
-    const newPlayerExpenses = perPlayerExpense * 5;
+    let playerInList = document.getElementById('player-list').childElementCount;
+    const newPlayerExpenses = perPlayerExpense * playerInList;
 
     const previousPlayerExpensesElement = document.getElementById('player-expense');
 
