@@ -1,10 +1,18 @@
+// common utility function
+
+function getInputValueByUsingId(elementId) {
+    const inputFieldElement = document.getElementById(elementId);
+    const inputFieldElementString = inputFieldElement.value;
+    const inputFieldValue = parseInt(inputFieldElementString);
+
+    return inputFieldValue;
+}
+
 // calculate player expense
 
 document.getElementById('calculate-player-expenses').addEventListener("click", function () {
 
-    const perPlayerExpenseElement = document.getElementById('budget-per-player');
-    const perPlayerExpenseString = perPlayerExpenseElement.value;
-    const perPlayerExpense = parseFloat(perPlayerExpenseString);
+    const perPlayerExpense = getInputValueByUsingId('budget-per-player');
 
     let playerInList = document.getElementById('player-list').childElementCount;
     const newPlayerExpenses = perPlayerExpense * playerInList;
@@ -22,13 +30,9 @@ document.getElementById('calculate-total-expense').addEventListener("click", fun
     const previousPlayerExpensesString = previousPlayerExpensesElement.innerText;
     const PlayerExpenses = parseFloat(previousPlayerExpensesString);
 
-    const managerExpenseElement = document.getElementById('manager-expanse');
-    const managerExpenseString = managerExpenseElement.value;
-    const managerExpense = parseFloat(managerExpenseString);
+    const managerExpense = getInputValueByUsingId('manager-expanse');
 
-    const coachExpenseElement = document.getElementById('coach-expense');
-    const coachExpenseString = coachExpenseElement.value;
-    const coachExpense = parseFloat(coachExpenseString);
+    const coachExpense = getInputValueByUsingId('coach-expense');
 
     const newTotalExpenses = PlayerExpenses + managerExpense + coachExpense;
 
