@@ -1,12 +1,3 @@
-// common utility function
-
-function getInputValueByUsingId(elementId) {
-    const inputFieldElement = document.getElementById(elementId);
-    const inputFieldElementString = inputFieldElement.value;
-    const inputFieldValue = parseInt(inputFieldElementString);
-
-    return inputFieldValue;
-}
 
 // calculate player expense
 
