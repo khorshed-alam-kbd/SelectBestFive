@@ -8,6 +8,10 @@ document.getElementById('calculate-player-expenses').addEventListener("click", f
     let playerInList = document.getElementById('player-list').childElementCount;
     const newPlayerExpenses = perPlayerExpense * playerInList;
 
+    if (isNaN(newPlayerExpenses)) {
+        return;
+    }
+
     const previousPlayerExpensesElement = document.getElementById('player-expense');
 
     previousPlayerExpensesElement.innerText = newPlayerExpenses;
@@ -24,6 +28,11 @@ document.getElementById('calculate-total-expense').addEventListener("click", fun
     const managerExpense = getInputValueByUsingId('manager-expanse');
 
     const coachExpense = getInputValueByUsingId('coach-expense');
+
+    if (isNaN(managerExpense) || isNaN(coachExpense)) {
+        return;
+    }
+
 
     const newTotalExpenses = PlayerExpenses + managerExpense + coachExpense;
 

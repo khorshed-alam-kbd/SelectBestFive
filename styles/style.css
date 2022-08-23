@@ -1,8 +1,12 @@
 .fornt-style {
     font-family: 'Berkshire Swash';
     font-weight: 400;
-    font-size: 60px;
+    font-size: 50px;
     color: #FF5E19;
+}
+
+.nfs {
+    font-size: 1.4rem;
 }
 
 #bcb-logo {
